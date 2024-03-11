@@ -6,14 +6,14 @@ import { useNavigate } from "react-router-dom";
 
 function ForecastPage() {
   const WEATHER_API_URL = import.meta.env.VITE_WEATHER_API_URL;
-  const TEMP_DATA_BOOL = import.meta.env.VITE_TEMP_DATA;
+  const USE_TEMP_DATA = import.meta.env.VITE_TEMP_DATA;
 
   const navigate = useNavigate();
 
   const { isLoading, data } = useQuery({
     queryKey: ["all-country-forecasts"],
     queryFn: () =>
-      fetch(`${WEATHER_API_URL}/forecast?use_temporary_data=${TEMP_DATA_BOOL}`)
+      fetch(`${WEATHER_API_URL}/forecast?use_temporary_data=${USE_TEMP_DATA}`)
         .then((res) => res.json())
         .then((response_json) => response_json.data),
   });

@@ -6,6 +6,7 @@ import "./css/weather-page.css"; // Import your CSS file
 
 function WeatherPage() {
   const WEATHER_API_URL = import.meta.env.VITE_WEATHER_API_URL;
+  const USE_TEMP_DATA = import.meta.env.VITE_TEMP_DATA;
 
   const navigate = useNavigate();
 
@@ -19,7 +20,7 @@ function WeatherPage() {
     enabled: false,
     queryFn: () =>
       fetch(
-        `${WEATHER_API_URL}/current?country=${selectedCountry}&use_temporary_data=true`
+        `${WEATHER_API_URL}/current?country=${selectedCountry}&use_temporary_data=${USE_TEMP_DATA}`
       )
         .then((res) => res.json())
         .then((response_json) => {

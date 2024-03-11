@@ -1,0 +1,27 @@
+.forecast-cards-container {
+  max-width: 1400px;
+}
+
+.forecast-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .filter-item {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .forecast-cards-container {
+    padding: 0 10px;
+  }
+}

@@ -11,9 +11,9 @@
 
 ### Running the application
 
-##### Before starting the applcation, make sure you add your RAPID_API_KEY in the backend `.env` file! - `/backend/.env` 
+##### Before starting the application, make sure you add your RAPID_API_KEY in the backend `.env` file! - `/backend/.env` 
 
-The best way to run this application would to use docker, using the docker-compose file found at the root of the cloned repository, type `docker-compose up` and this will 
+The best way to run this application would be to use Docker, using the docker-compose file found at the root of the cloned repository, type `docker-compose up` and this will 
 build and start the backend and frontend containers, you will then be able to access the application at `http://localhost:3000/`
 
 The process to build and start the backend and frontend individually is documented below - 
@@ -24,7 +24,7 @@ To utilise the Weather app API, ensure you have the required dependencies instal
 
 1. Navigate to backend folder
 2. Create a virtual environment using the following command - `python -m venv ./venv`
-3. Activate the virtual environment, for MacOS using the command `source venv/bin/activate`, for Windows run `Activate.bat` found under `/venv/bin`
+3. Activate the virtual environment, for MacOS using the command `source venv/bin/activate`, for Windows run `Activate.bat` found under `/venv/Scripts`
 4. Install requirements.txt using the following command - `pip install -r requirements.txt`
 5. In the terminal, write `uvicorn src.main:app --reload` which will start the FastAPI server
 6. Navigate to `http://127.0.0.1:8000/docs/` which is where the endpoints available can be found
@@ -71,7 +71,7 @@ An endpoint to receive information about the current weather for a given locatio
 API Gateway - 
 
 - Serves as a entry point for the API. It is responsible for handling incoming requests, manages authorisation and routing requests.
-- API Gateway is resilient as it is built upon AWS global infrastructure, which is built on AWS regions and availability zones, so scalability and performance will not be a problem.
+- API Gateway is resilient as it is built upon AWS global infrastructure, which is built on AWS regions and availability zones, so scalability and performance are not expected to be problematic.
 https://docs.aws.amazon.com/apigateway/latest/developerguide/disaster-recovery-resiliency.html
 
 AWS Lambda 
@@ -88,8 +88,8 @@ https://aws.amazon.com/blogs/compute/understanding-aws-lambda-scaling-and-throug
 
 ##### Non-functional Requirements - 
 
-- Customer experience/satisfaction - To reduce the number of `500` or bad requests recieved by the customer, implement retry functionality 
-, check if the query to DB failed and have a retry functionality within the code to make sure a `200` response is returned. 
+- Customer experience/satisfaction - To reduce the number of `500` or bad requests received by the customer, implement retry functionality 
+, Check for failed database queries and implement a retry mechanism within the code to ensure a successful 200 response.
 
 
 - Datadog Logging - Datadog is a cloud-based monitoring and analytics platform that provides real-time insights into the performance and health of applications, infrastructure, and logs.

@@ -45,7 +45,7 @@ def test_all_forecast_response(client: TestClient):
     assert response.status_code == 200
     forecast_data = response.json()["data"]
     cities = [i["city_name"] for i in forecast_data]
-    assert cities == ['London', 'New York', 'Mumbai', 'Sydney', 'Tokyo']
+    assert cities == ['London', 'New York City', 'Mumbai', 'Sydney', 'Tokyo']
 
 
 def test_single_country_forecast_response(client: TestClient):
